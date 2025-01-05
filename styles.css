@@ -27,7 +27,13 @@
 
 body {
     font-family: var(--sans-serif);
-    font-family: 400;
+    font-weight: 400;
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+main {
+    position: relative;
 }
 
 a {
@@ -63,6 +69,10 @@ h3, .h3 {
     padding: 1.5rem;
 }
 
+ul a {
+    transition: 0.3s;
+}
+
 ul a:hover {
     filter: invert(1);
 }
@@ -89,7 +99,7 @@ ul a:hover {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    position: fixed;
+    position: absolute;
     right: 1.5rem;
     bottom: 1.5rem;
 }
@@ -104,12 +114,12 @@ button {
     text-align: center;
     text-decoration: none;
     border-radius: 3px;
+    transition: 0.1s;
 }
 
 button:hover {
     background-color: var(--black);
     color: var(--white);
-    transition: 0.1s;
 }
 
 li {
@@ -182,3 +192,9 @@ li {
         opacity: 0;
     }
 }
+
+@media screen and (max-width: 992px) {
+    :root {
+      font-size: 12px;
+    }
+  }

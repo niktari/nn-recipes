@@ -85,6 +85,8 @@ async function fetchData() {
 
 function triggerStars() {
 
+    const mainElem = document.querySelector("main");
+
 for(let i = 0; i < 100; i++) {
     const newDiv = document.createElement("div");
     let newContent;
@@ -99,21 +101,18 @@ for(let i = 0; i < 100; i++) {
     newDiv.appendChild(newContent);
     newDiv.style.transform = `rotate(${Math.random() * 360}deg)`
     newDiv.classList.add("star");
-    document.body.appendChild(newDiv)
+    mainElem.appendChild(newDiv)
 
     let stars = document.querySelectorAll(".star")
 
     for(let star of stars) {
+        star.style.setProperty("--initial-rotation", `${Math.random() * 360 - 180}deg`);
         star.style.left = `${Math.random() * (100 - (-75)) + (-75)}vw`;
         star.style.animationDuration = `${(Math.random() * 2) + 1}s`;
-        
-        const randomRotation = Math.random() * 360 - 180;
-        star.style.setProperty("--initial-rotation", `${randomRotation}deg`);
-        
     }
 
     setTimeout(function() {
-        document.body.removeChild(newDiv);
+        mainElem.removeChild(newDiv);
      }, 5000);
 
 }
