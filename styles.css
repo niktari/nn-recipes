@@ -1,0 +1,184 @@
+@font-face {
+    font-family: Jokker;
+    src: url(JokkerTRIAL-Medium.woff2);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Jokker;
+    src: url(JokkerTRIAL-Semibold.woff2);
+    font-weight: 800;
+}
+  
+
+:root {
+    font-size: 16px;
+    --sans-serif: Jokker;
+
+    --black: #000000;
+    --white: #FFFFFF;
+    --dark-blue: #1457C3;
+    --light-blue: #A3C7FF;
+    --green: #C2F970;
+    --yellow: #FFDB28;
+
+    --initial-rotation: 0deg;
+}
+
+body {
+    font-family: var(--sans-serif);
+    font-family: 400;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h2, .h2 {
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    transition: opacity 0.5s ease-in-out; 
+    opacity: 1; 
+
+}
+
+h2.hidden {
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out; /* Match timing with visibility change */
+}
+
+h3, .h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.5rem;
+}
+
+ul a:hover {
+    filter: invert(1);
+}
+
+.main, .sides {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.first--section {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    height: 50vh;
+}
+
+.second--section {
+    background-color: var(--light-blue);
+    color: var(--black);
+    height: 50vh;
+}
+
+.buttons--section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+}
+
+button {
+    font-family: var(--sans-serif);
+    background-color: var(--white);
+    cursor: pointer;
+    border: none;
+    color: var(--black);
+    padding: 0.3rem 0.6rem;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+button:hover {
+    background-color: var(--black);
+    color: var(--white);
+    transition: 0.1s;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+.symbol {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.material-icons {
+    font-weight: 800;
+}
+
+.emojis {
+    display: flex;
+}
+
+#heart {
+    display: block;
+    animation: pulse 3s infinite;
+}
+
+.star {
+    position: absolute;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    top: -50vh;
+    animation: fall 2s linear;
+    padding: 0.25rem 0.25rem 0.25rem 0.3rem;
+    text-align: center;
+}
+
+.bg-green {
+    background-color: var(--green);
+}
+
+.bg-yellow {
+    background-color: var(--yellow);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.8);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(0.8);
+    }
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(var(--initial-rotation)); /* Use initial rotation */
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(150vh) rotate(calc(var(--initial-rotation) + 360deg)); /* Full spin */
+        opacity: 0;
+    }
+}
