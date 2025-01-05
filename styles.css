@@ -73,8 +73,12 @@ ul a {
     transition: 0.3s;
 }
 
-ul a:hover {
-    filter: invert(1);
+.first--section a:hover {
+    color: var(--black);
+}
+
+.second--section a:hover {
+    color: var(--white);
 }
 
 .main, .sides {
@@ -114,7 +118,7 @@ button {
     text-align: center;
     text-decoration: none;
     border-radius: 3px;
-    transition: 0.1s;
+    transition: 0.3s;
 }
 
 button:hover {
