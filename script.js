@@ -61,6 +61,16 @@ async function fetchData() {
                 firstSides.innerHTML = `<li><a href="${data[firstIndex].Side1Link}" target="_blank">${data[firstIndex].Side1} ↗</a></li>`;
             }
 
+            if(data[firstIndex].Side2) {
+
+                if (!data[firstIndex].Side2Link) {
+                    firstSides.innerHTML += `<li>${data[firstIndex].Side2}</li>`;
+                } else {
+                    firstSides.innerHTML += `<li><a href="${data[firstIndex].Side2Link}" target="_blank">${data[firstIndex].Side2} ↗</a></li>`;
+                }
+    
+            }
+
             if (!data[secondIndex].MainLink) {
                 secondMain.innerHTML = `<li>${data[secondIndex].Main}</li>`;
             } else {
@@ -68,10 +78,20 @@ async function fetchData() {
             }
 
             if (!data[secondIndex].Side1Link) {
-                secondSides.innerHTML = data[secondIndex].Side1;
+                secondSides.innerHTML = `<li>${data[secondIndex].Side1}</li>`;
             } else {
                 secondSides.innerHTML = `<li><a href="${data[secondIndex].Side1Link}" target="_blank">${data[secondIndex].Side1} ↗</a></li>`;
             }
+
+            if(data[secondIndex].Side2) {
+
+            if (!data[secondIndex].Side2Link) {
+                secondSides.innerHTML += `<li>${data[secondIndex].Side2}</li>`;
+            } else {
+                secondSides.innerHTML += `<li><a href="${data[secondIndex].Side2Link}" target="_blank">${data[secondIndex].Side2} ↗</a></li>`;
+            }
+
+        }
 
             // Remove the hidden class to trigger fade-in
             [firstMain, firstSides, secondMain, secondSides].forEach((el) =>
