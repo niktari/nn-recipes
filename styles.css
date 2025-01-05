@@ -1,12 +1,12 @@
 @font-face {
     font-family: Jokker;
-    src: url(JokkerTRIAL-Medium.woff2);
+    src: url(./assets/JokkerTRIAL-Medium.woff2);
     font-weight: 400;
 }
 
 @font-face {
     font-family: Jokker;
-    src: url(JokkerTRIAL-Semibold.woff2);
+    src: url(./assets/JokkerTRIAL-Semibold.woff2);
     font-weight: 800;
 }
   
@@ -15,7 +15,7 @@
     font-size: 16px;
     --sans-serif: Jokker;
 
-    --black: #000000;
+    --black: #051A55;
     --white: #FFFFFF;
     --dark-blue: #1457C3;
     --light-blue: #A3C7FF;
@@ -155,6 +155,7 @@ li {
     animation: fall 2s linear;
     padding: 0.25rem 0.25rem 0.25rem 0.3rem;
     text-align: center;
+    color: var(--black);
 }
 
 .bg-green {
